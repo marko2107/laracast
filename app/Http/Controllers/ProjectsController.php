@@ -12,4 +12,17 @@ class ProjectsController extends Controller
       //dd($projects);
       return view ('projects.index')->with('projects', $projects);
     }
+
+    public function create(){
+      return view ('projects.create');
+    }
+
+    public function store(){
+      $project = new Project;
+      $project -> title = request('title');
+      $project -> description = request('description');
+      $project -> save();
+      return redirect ('/projects');
+
+    }
 }

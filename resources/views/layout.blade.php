@@ -8,6 +8,7 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/projects">Projects</a></li>
+      @yield('navigation')
       <li><a href="/contact">Contact us</a></li>
       <li><a href="/about">About us</a></li>
     </ul>

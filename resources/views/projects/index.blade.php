@@ -4,6 +4,10 @@
 Projects
 @endsection
 
+@section('navigation')
+<a href="projects/create">Add new Project</a>
+@endsection
+
 @section('content')
 <h1>Projects</h1>
 <ul>
