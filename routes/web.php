@@ -14,7 +14,7 @@ Route::get('/','PagesController@home');
 Route::get('/about','PagesController@about');
 Route::get('/contact','PagesController@contact');
 
-Route::resource('projects','ProjectsController'): // zamjena za sve dolje navedeno
+Route::resource('projects','ProjectsController'); // zamjena za sve dolje navedeno
 // Route::get('/projects','ProjectsController@index');
 // Route::get('/projects/create','ProjectsController@create');
 // Route::get('/projects/{projects}','ProjectsController@show');
