@@ -18,14 +18,20 @@ class ProjectsController extends Controller
     }
 
     public function store(){
+      $validated=request()->validate([
+        'title'=> ['required','min:3','max:255'],
+        'description'=>['required','min:3']
+      ]);
+
+      Project::create($validated);
 
       //Project::create([request('title','description')]);
 
       // 2. nacin
-       Project::create([
-         'title'=>request('title'),
-         'description'=>request('description')
-       ]);
+      //Project::create([
+      //   'title'=>request('title'),
+      //   'description'=>request('description')
+      //]);
 
       // 1. nacin
       // $project = new Project;
