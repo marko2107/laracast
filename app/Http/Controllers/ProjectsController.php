@@ -18,35 +18,50 @@ class ProjectsController extends Controller
     }
 
     public function store(){
-      $project = new Project;
-      $project -> title = request('title');
-      $project -> description = request('description');
-      $project -> save();
-      return redirect ('/projects');
 
+      //Project::create([request('title','description')]);
+
+      // 2. nacin
+       Project::create([
+         'title'=>request('title'),
+         'description'=>request('description')
+       ]);
+
+      // 1. nacin
+      // $project = new Project;
+      // $project -> title = request('title');
+      // $project -> description = request('description');
+      // $project -> save();
+      return redirect('/projects');
     }
 
-    public function show($id){
-      $project=Project::findOrFail($id);
+    public function show(Project $project){
+      //$project=Project::findOrFail($id);
       return view ('projects.show')->with('project', $project);
     }
 
-    public function update($id){
-      $project=Project::findOrFail($id);
-      $project->title=Request('title');
-      $project->description=Request('description');
-      $project->save();
+    public function update(Project $project){
+      $project->update([
+        'title'=>request('title'),
+        'description'=>request('description')
+      ]);
+
+      //$project=Project::findOrFail($id);
+
+      // $project->title=Request('title');
+      // $project->description=Request('description');
+      // $project->save();
 
       return redirect('/projects');
     }
 
-    public function destroy($id){
-      $project=Project::findOrFail($id)->delete();
+    public function destroy(Project $project){
+      $project->delete();
       return redirect('/projects');
     }
 
-    public function edit($id){
-      $project=Project::findOrFail($id);
+    public function edit(Project $project){
+      //$project=Project::findOrFail($id);
       return view ('projects.edit')->with('project', $project);
     }
 }
