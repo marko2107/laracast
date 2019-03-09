@@ -25,8 +25,18 @@
 {{$task->description}}
 </label>
 </form>
-
 @endforeach
 @endif
 </div>
+<form class="" action="/projects/{{$project->id}}/tasks" method="post">
+  @csrf
+  <label for="description">New Task</label>
+  <input type="text" name="description" placeholder="Add new Task" value="">
+  <button type="submit">Add Task</button>
+@include('errors')
+</form>
+
+
+
+
 @endsection

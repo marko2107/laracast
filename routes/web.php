@@ -23,3 +23,4 @@ Route::resource('projects','ProjectsController'); // zamjena za sve dolje navede
 // Route::get('/projects/{projects}/edit','ProjectsController@edit');
 // Route::post('/projects','ProjectsController@store');
 Route::patch('/tasks/{task}','ProjectTasksController@update');
+Route::post('/projects/{project}/tasks','ProjectTasksController@store');

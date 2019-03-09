@@ -10,7 +10,7 @@ class Task extends Model
       return $this->belongsTo('App\Project','project_id');
     }
     protected $fillable = [
-     'completed'
+     'completed', 'project_id', 'description'
    ];
 }
 
